@@ -2,7 +2,10 @@
   stageLevel();
   let toStage = getUrlParam("s");
   if (!(toStage && toStage > 0 && toStage <= 16)) {
-    toStage = 1;
+    toStage = null;
+  }
+  if (toStage == null) {
+    toStage = localStorage.getItem('plumber.stage');
   }
   var stage = toStage || 1,
       active = 1,
@@ -73,6 +76,7 @@
     console.info(h);
     if($('.level' + stage).data('code') == h){
       stage++;
+      localStorage.setItem('plumber.stage', stage);
       active = 0;
       setTimeout(function(){
         showLevels();
