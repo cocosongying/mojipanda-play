@@ -89,6 +89,7 @@
     $('#win .text span').text(remove);
     if(stage > levelCount){
       $('#finished').fadeIn();
+      localStorage.removeItem('plumber.stage');
     }else if(stage > 1){
       $('#win').fadeIn();
       setTimeout(function(){
