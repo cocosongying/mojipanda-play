@@ -1,6 +1,10 @@
 (function(){
   stageLevel();
-  var stage = 1,
+  let toStage = getUrlParam("s");
+  if (!(toStage && toStage > 0 && toStage <= 16)) {
+    toStage = 1;
+  }
+  var stage = toStage || 1,
       active = 1,
       levelCount = $('div[class^=level]').length,
       createLevelState = 0;
@@ -150,4 +154,16 @@
     var x = $(this).attr('class');
     $('.newLevel').append('<div class="block ' + x + ' r1"></div>');
   });
+
+  function getUrlParam(name) {
+    var query = window.location.search.substring(1);
+    var params = query.split("&");
+    for (let i = 0; i < params.length; i++) {
+      let pair = params[i].split("=");
+      if (pair[0] == name) {
+        return pair[1];
+      }
+    }
+    return null;
+  }
 })();
