@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>魔方3阶 - 磨叽熊猫</title>
+    <meta name="viewport"
+        content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="icon" href="https://mojipanda.com/img/favicon.ico">
+    <link rel="stylesheet" href="css/cube.css">
+</head>
+
+<body>
+    <div class="ui">
+        <div class="ui__background"></div>
+        <div class="ui__game"></div>
+        <div class="ui__texts">
+            <h1 class="text text--title">
+                <span>魔方3阶</span>
+                <span></span>
+            </h1>
+            <div class="text text--note">
+                双击开始
+            </div>
+            <div class="text text--timer">
+                0:00
+            </div>
+            <div class="text text--complete">
+                <span>完成!</span>
+            </div>
+            <div class="text text--best-time">
+                <icon trophy></icon>
+                <span>最快记录!</span>
+            </div>
+        </div>
+        <div class="ui__prefs">
+            <range name="flip" title="翻转类型" list="迅速,平滑,弹性"></range>
+            <range name="scramble" title="扰码长度" list="20,25,30"></range>
+            <range name="fov" title="镜头角度" list="摄影,透视"></range>
+            <range name="theme" title="主题颜色" list="普通,海洋,沙漠,迷彩,雨林"></range>
+        </div>
+        <div class="ui__stats">
+            <div class="stats" name="total-solves">
+                <i>完成次数:</i><b>-</b>
+            </div>
+            <div class="stats" name="best-time">
+                <i>最快记录:</i><b>-</b>
+            </div>
+            <div class="stats" name="worst-time">
+                <i>最慢记录:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-5">
+                <i>5次平均:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-12">
+                <i>12次平均:</i><b>-</b>
+            </div>
+            <div class="stats" name="average-25">
+                <i>25次平均:</i><b>-</b>
+            </div>
+        </div>
+        <div class="ui__buttons">
+            <button class="btn btn--bl btn--stats">
+                <icon trophy></icon>
+            </button>
+            <button class="btn btn--bl btn--prefs">
+                <icon settings></icon>
+            </button>
+            <button class="btn btn--bl btn--back">
+                <icon back></icon>
+            </button>
+            <button class="btn btn--br btn--pwa">
+            </button>
+        </div>
+    </div>
+    <script src='js/three.min.js'></script>
+    <script src="js/cube3v.js"></script>
+</body>
+
+</html>
